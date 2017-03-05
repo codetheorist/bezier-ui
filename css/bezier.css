@@ -3,6 +3,9 @@
   width: 300px;
   height: 300px;
 }
+.bezier-field-ui {
+  margin-bottom: 2rem;
+}
 .coordinate-plane {
   height: 300px;
   width: 300px;
