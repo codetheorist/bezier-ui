@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8" />
+<title>Cubic Bezier Sandbox</title>
+<link rel="stylesheet" href="css/foundation.css">
+<link rel="stylesheet" href="css/app.css">
+<link rel="shortcut icon"  type="image/png" href="about:blank" />
+</head>
+<body>
+<div class="row">
+<div class="medium-8 medium-centered columns text-center">
+<h1>Interactive Canvas</h1>
+</div>
+</div>
+<div class="coordinate-plane">
+  <span class="control-point P0"></span>
+  <button class="control-point P1 draggable ui-widget-content" style="left:75px; top: 250px;"></button>
+  <button class="control-point P2 draggable ui-widget-content" style="left:250px; top: 75px;"></button>
+  <span class="control-point P3"></span>
+
+  <canvas height="300" width="300" id="canvas-1" style="border: 1px solid #1d1d1d"></canvas>
+</div>
+
+<script src="js/jquery.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/what-input.js"></script>
+<script src="js/foundation.js"></script>
+<script src="js/app.js"></script>
+<script>
+'use strict';
+(function($) {
+  var c=document.getElementById("canvas-1");
+  var ctx=c.getContext("2d");
+  ctx.lineWidth=8;
+  ctx.beginPath();
+  ctx.moveTo(300,0);
+  ctx.bezierCurveTo(75,250,250,75,0,300);
+  ctx.stroke();
+  $( function() {
+    $(".control-point").each(function() {
+      $(this).draggable();
+    });
+  } );
+
+
+})(jQuery);
+</script>
+</body>
+</html>

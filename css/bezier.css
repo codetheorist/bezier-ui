@@ -1,0 +1,76 @@
+.bezier-ui-wrapper {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+.coordinate-plane {
+  height: 300px;
+  width: 300px;
+}
+canvas.bezier-ui-canvas {
+  background: #f0f0f0;
+  background: -moz-linear-gradient(-45deg, transparent 49%, rgba(0,0,0,.1) 49%, rgba(0,0,0,.1) 51%, transparent 51%, transparent) center no-repeat,
+    -moz-repeating-linear-gradient(white, white 20px, transparent 20px, transparent 40px) no-repeat,
+    -moz-linear-gradient(transparent, rgba(0,0,0,.06) 25%, rgba(0,0,0,.06) 75%, transparent);
+  background: -ms-linear-gradient(-45deg, transparent 49%, rgba(0,0,0,.1) 49%, rgba(0,0,0,.1) 51%, transparent 51%) center no-repeat,
+    -ms-repeating-linear-gradient(white, white 20px, transparent 20px, transparent 40px) no-repeat,
+    -ms-linear-gradient(transparent, rgba(0,0,0,.06) 25%, rgba(0,0,0,.06) 75%, transparent);
+  background: -o-linear-gradient(-45deg, transparent 49%, rgba(0,0,0,.1) 49%, rgba(0,0,0,.1) 51%, transparent 51%) center no-repeat,
+    -o-repeating-linear-gradient(white, white 20px, transparent 20px, transparent 40px) no-repeat,
+    -o-linear-gradient(transparent, rgba(0,0,0,.06) 25%, rgba(0,0,0,.06) 75%, transparent);
+  background: -webkit-linear-gradient(-45deg, transparent 49%, rgba(0,0,0,.1) 49%, rgba(0,0,0,.1) 51%, transparent 51%) center no-repeat,
+    -webkit-repeating-linear-gradient(white, white 20px, transparent 20px, transparent 40px) no-repeat,
+    -webkit-linear-gradient(transparent, rgba(0,0,0,.06) 25%, rgba(0,0,0,.06) 75%, transparent);
+  background: linear-gradient(-45deg, transparent 49%, rgba(0,0,0,.1) 49%, rgba(0,0,0,.1) 51%, transparent 51%) center no-repeat,
+    repeating-linear-gradient(white, white 20px, transparent 20px, transparent 40px) no-repeat,
+    linear-gradient(transparent, rgba(0,0,0,.06) 25%, rgba(0,0,0,.06) 75%, transparent);
+  background-size: 100% 100%, 100% 100%, auto;
+  background-position: 0, 0, 0;
+
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.control-point {
+  position: absolute;
+  z-index: 1;
+  height: 20px;
+  width: 20px;
+  border: 1px solid rgba(0,0,0,.3);
+  margin: -10px;
+  outline: none;
+
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+   -moz-border-radius: 10px;
+   border-radius: 10px;
+}
+
+.bezier-ui-start-control, .bezier-ui-end-control {
+  background: white;
+}
+
+.bezier-ui-start-curve, .bezier-ui-end-curve {
+  cursor: pointer;
+  z-index: 10;
+}
+
+.bezier-ui-start-control {
+  left: 0;
+  top: 100%;
+}
+
+.bezier-ui-start-curve {
+  background: #f08;
+}
+
+.bezier-ui-end-curve {
+  background: #0ab;
+}
+
+.bezier-ui-end-control {
+  left: 100%;
+  top: 0;
+}
