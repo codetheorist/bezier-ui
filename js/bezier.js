@@ -44,11 +44,17 @@
     function setTextValues(id) {
       var valuesUi = $('[data-bezier-ui-coordinates="' + id + '"]');
       console.log(id);
-      if ($('[data-bezier="' + id + '"]').val() == '') {
-        var values = [0.25, 0.75, 0.75, 0.25];
-      } else {
+      if ($('[data-bezier="' + id + '"]').val() != '') {
         var value = $('[data-bezier="' + id + '"]').val().replace('cubic-bezier(', '').replace(')', '');
         var values = JSON.parse("[" + value + "]");
+        console.log('Value: ' + values)
+      } else if ($('[data-bezier="' + id + '"]').attr('placeholder') != '') {
+        var value = $('[data-bezier="' + id + '"]').attr('placeholder').replace('cubic-bezier(', '').replace(')', '');
+        var values = JSON.parse("[" + value + "]");
+        console.log('Placeholder: ' + values)
+      } else {
+        var values = [0.25, 0.75, 0.75, 0.25];
+        console.log('Default: ' + values)
       }
 
       for (var i = 0; i < values.length; i++) {
