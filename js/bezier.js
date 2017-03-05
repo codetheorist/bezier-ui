@@ -44,14 +44,12 @@
     function setTextValues(id) {
       var valuesUi = $('[data-bezier-ui-coordinates="' + id + '"]');
       console.log(id);
-      if ($('[data-bezier="' + id + '""]').val() !== null) {
+      if ($('[data-bezier="' + id + '"]').val() == '') {
+        var values = [0.25, 0.75, 0.75, 0.25];
+      } else {
         var value = $('[data-bezier="' + id + '"]').val().replace('cubic-bezier(', '').replace(')', '');
+        var values = JSON.parse("[" + value + "]");
       }
-      else {
-        var value = $('[data-bezier="' + id + '"]').attr('placeholder').replace('cubic-bezier(', '').replace(')', '');
-      }
-
-      var values = JSON.parse("[" + value + "]");
 
       for (var i = 0; i < values.length; i++) {
         $(valuesUi).find('.' + coords[i]).text(values[i]);
@@ -136,7 +134,7 @@
           $this = this;
 
 
-      $(this).attr('data-bezier', $count);
+      $(this).attr({'data-bezier': $count, 'disabled': ''});
 
       if ($(this).parent('label').length > 0) {
         $(this).parent().wrap('<div class="bezier-field-ui"></div>');
