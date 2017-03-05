@@ -15,6 +15,16 @@
       selector = 'input.' + settings.fieldClass;
     }
 
+    function updateCanvas(sx, sy, ex, ey, ctx) {
+      ctx.lineWidth = 6;
+      ctx.strokeStyle = "black";
+      ctx.clearRect(0, 0, settings.size, settings.size);
+      ctx.beginPath();
+      ctx.moveTo(0, settings.size);
+      ctx.bezierCurveTo(sx, sy, ex, ey, settings.size, 0);
+      ctx.stroke();
+    }
+
     function uiHtml(id) {
       var size = settings.size;
 
@@ -32,9 +42,17 @@
     }
 
     function setTextValues(id) {
-      var valuesUi = $('[data-bezier-ui-coordinates="' + id + '"]'),
-          value = $('[data-bezier="' + id + '"]').val().replace('cubic-bezier(', '').replace(')', ''),
-          values = JSON.parse("[" + value + "]");
+      var valuesUi = $('[data-bezier-ui-coordinates="' + id + '"]');
+      console.log(id);
+      if ($('[data-bezier="' + id + '""]').val() !== null) {
+        var value = $('[data-bezier="' + id + '"]').val().replace('cubic-bezier(', '').replace(')', '');
+      }
+      else {
+        var value = $('[data-bezier="' + id + '"]').attr('placeholder').replace('cubic-bezier(', '').replace(')', '');
+      }
+
+      var values = JSON.parse("[" + value + "]");
+
       for (var i = 0; i < values.length; i++) {
         $(valuesUi).find('.' + coords[i]).text(values[i]);
       }
@@ -141,6 +159,15 @@
         drag: function(e) {
           $(valuesUi).find('.sy').text(trueValue($start.css('top').replace('px', '')));
           $(valuesUi).find('.sx').text(trueValue($start.css('left').replace('px', '')));
+          sx = $start.css('left').replace('px', '');
+          sy = $start.css('top').replace('px', '');
+          updateCanvas(sx, sy, ex, ey, ctx);
+          var input = 'cubic-bezier(' +
+            trueValue(sx) + ', ' +
+            trueValue(sy) + ', ' +
+            trueValue(ex) + ', ' +
+            trueValue(ey) + ')';
+          $(selector + '[data-bezier="' + $count + '"]').val(input);
         }
       });
 
@@ -150,24 +177,24 @@
         drag: function(e) {
           $(valuesUi).find('.ey').text(trueValue($end.css('top').replace('px', '')));
           $(valuesUi).find('.ex').text(trueValue($end.css('left').replace('px', '')));
-          ex = $end.css('top').replace('px', '');
+          ex = $end.css('left').replace('px', '');
           ey = $end.css('top').replace('px', '');
+          updateCanvas(sx, sy, ex, ey, ctx);
+          var input = 'cubic-bezier(' +
+            trueValue(sx) + ', ' +
+            trueValue(sy) + ', ' +
+            trueValue(ex) + ', ' +
+            trueValue(ey) + ')';
+          $(selector + '[data-bezier="' + $count + '"]').val(input);
         }
       });
 
       var sx = $start.css('top').replace('px', ''),
-          sy = $start.css('top').replace('px', ''),
+          sy = $start.css('left').replace('px', ''),
           ex = $end.css('top').replace('px', ''),
-          ey = $end.css('top').replace('px', '');
+          ey = $end.css('left').replace('px', '');
 
-      ctx.lineWidth = 6;
-      ctx.strokeStyle = "black";
-      ctx.clearRect(0, 0, settings.size, settings.size);
-      ctx.beginPath();
-      ctx.moveTo(0, settings.size);
-      ctx.bezierCurveTo(sx, sy, ex, ey, settings.size, 0);
-      ctx.stroke();
-
+      updateCanvas(sx, sy, ex, ey, ctx);
       count++;
     });
 

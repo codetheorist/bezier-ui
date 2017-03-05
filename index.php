@@ -41,7 +41,7 @@
             <input class="bezier-field" type="text" data-bezier value="cubic-bezier(0.14, 0.65, 0.80, 0.38)">
           </label>
           <label>Bezier
-            <input class="bezier-field" type="text" data-bezier value="cubic-bezier(0.37, 0.74, 0.56, 0.23)">
+            <input class="bezier-field" type="text" data-bezier value="cubic-bezier(0.25, 0.75, 0.75, 0.25)">
           </label>
         </form>
       </div>
