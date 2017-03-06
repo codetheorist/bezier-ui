@@ -1,1 +1,4 @@
 theme: jekyll-theme-tactile
+title: Bezier UI
+description: A jQuery plugin for creating Cubic Bezier curves.
+show_downloads: true
