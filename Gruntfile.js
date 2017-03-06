@@ -95,9 +95,34 @@ module.exports = function(grunt) {
           src : ['src/js/bezier-ui.js', '**/*.php', 'src/css/bezier-ui.css']
         },
         options: {
+          server: false,
           watchTask: true,
-          open: 'external',
-          host: "http://cubic.bezier"
+          open: false,
+          logLevel: "debug",
+          logPrefix: "Bezier UI",
+          logConnections: true,
+          logFileChanges: true,
+          logSnippet: true,
+          reloadOnRestart: true,
+          snippetOptions: {
+            ignorePaths: "inc/*.php",
+            rule: {
+                match: /<\/body>/i,
+                fn: function (snippet, match) {
+                    return snippet + match;
+                }
+            }
+          },
+          rewriteRules: [
+              {
+                  match: /Browsersync/g,
+                  fn: function (req, res, match) {
+                      return 'Bezier UI';
+                  }
+              }
+          ],
+          plugins: ["bs-html-injector?files[]=*.php"],
+          startPath: "/index.php"
         }
       }
     },
