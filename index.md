@@ -11,7 +11,13 @@ This jQuery plugin depends on the following:
 
 ### Usage
 
-To test or contribute to this plugin, simply clone the repository and run:
+To test or contribute to this plugin, simply clone the repository using:
+
+```bash
+git clone git@github.com:codetheorist/bezier-ui.git
+```
+
+When you've cloned the repository, run:
 
 ```bash
 npm install
