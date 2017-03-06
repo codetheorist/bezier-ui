@@ -1,0 +1,40 @@
+{
+  "name": "bezier-ui",
+  "version": "1.0.0",
+  "description": "A jQuery plugin for creating cubic-bezier form fields with UI.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/djalxs/bezierui.git"
+  },
+  "keywords": [
+    "Cubic",
+    "Bezier",
+    "Curve",
+    "Javascript",
+    "jQuery",
+    "Forms",
+    "Fields"
+  ],
+  "author": "Alex Scott",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/djalxs/bezierui#readme",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.3.13",
+    "babel-register": "^6.7.2",
+    "browser-sync": "^2.18.8",
+    "grunt": "~0.4.5",
+    "grunt-babel": "^6.0.0",
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-uglify": "~0.5.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "jquery": "^3.1.1",
+    "jquery-ui": "^1.12.1",
+    "load-grunt-tasks": "~0.6.0",
+    "motion-ui": "^1.2.2"
+  }
+}

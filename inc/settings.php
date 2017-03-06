@@ -5,32 +5,23 @@
     'scripts' => array(
       'jquery' => array(
         'location' => 'bottom',
-        'path' => 'jquery.js'
+        'path' => 'dist/js/vendor/jquery.min.js'
       ),
       'jquery-ui' => array(
         'location' => 'bottom',
-        'path' => 'jquery-ui.js'
+        'path' => 'dist/js/vendor/jquery-ui.min.js'
       ),
       'what-input' => array(
         'location' => 'bottom',
-        'path' => 'what-input.js'
-      ),
-      'foundation' => array(
-        'location' => 'bottom',
-        'path' => 'foundation.min.js'
-      ),
-      'app' => array(
-        'location' => 'bottom',
-        'path' => 'app.js'
+        'path' => 'dist/js/vendor/what-input.min.js'
       ),
       'bezier' => array(
         'location' => 'bottom',
-        'path' => 'bezier.js'
+        'path' => 'src/js/bezier-ui.js'
       ),
     ),
     'styles' => array(
-      'foudnation' => 'foundation.min.css',
-      'bezier' => 'bezier.css',
-      'jquery-ui' => 'jquery-ui.css',
+      'bezier' => 'src/css/bezier-ui.css',
+      'jquery-ui' => 'dist/css/vendor/jquery-ui.min.css',
     ),
   ];
