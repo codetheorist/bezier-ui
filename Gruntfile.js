@@ -96,7 +96,7 @@ module.exports = function(grunt) {
         },
         options: {
           watchTask: true,
-          open: false,
+          open: 'external',
           host: "http://cubic.bezier"
         }
       }
