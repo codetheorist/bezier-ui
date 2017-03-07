@@ -2,6 +2,9 @@
   "name": "bezier-ui",
   "version": "1.0.0",
   "description": "A jQuery plugin for creating cubic-bezier form fields with UI.",
+  "scripts": {
+    "test": "mocha"
+  },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@bitbucket.org/djalxs/bezierui.git"
