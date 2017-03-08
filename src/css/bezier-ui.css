@@ -6,10 +6,6 @@
 .bezier-field-ui {
   margin-bottom: 2rem;
 }
-.coordinate-plane {
-  height: 300px;
-  width: 300px;
-}
 canvas.bezier-ui-canvas {
   background: #f0f0f0;
   background: -moz-linear-gradient(-45deg, transparent 49%, rgba(0,0,0,.1) 49%, rgba(0,0,0,.1) 51%, transparent 51%, transparent) center no-repeat,

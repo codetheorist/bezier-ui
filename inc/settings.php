@@ -23,5 +23,6 @@
     'styles' => array(
       'bezier' => 'src/css/bezier-ui.css',
       'jquery-ui' => 'dist/css/vendor/jquery-ui.min.css',
+      'foundation' => 'node_modules/foundation-sites/dist/css/foundation.css',
     ),
   ];

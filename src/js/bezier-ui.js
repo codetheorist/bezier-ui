@@ -20,8 +20,8 @@
       ctx.strokeStyle = "black";
       ctx.clearRect(0, 0, settings.size, settings.size);
       ctx.beginPath();
-      ctx.moveTo(0, settings.size);
-      ctx.bezierCurveTo(sx, sy, ex, ey, settings.size, 0);
+      ctx.moveTo(settings.strokeWidth -2, settings.size - (settings.strokeWidth - 2));
+      ctx.bezierCurveTo(sx, sy, ex, ey, settings.size - (settings.strokeWidth - 2), settings.strokeWidth - 2);
       ctx.stroke();
     }
 
@@ -29,7 +29,7 @@
       var size = settings.size;
 
       var html = '<div class="bezier-ui-wrapper" style="width: ' + size + 'px; height: ' + size + 'px">';
-          html = html + '<div class="coordinate-plane" data-bezier-ui-coordinates="' + id + '">';
+          html = html + '<div class="coordinate-plane" data-bezier-ui-coordinates="' + id + '" style="width: ' + size + 'px; height: ' + size + 'px">';
           html = html + '<span class="control-point bezier-ui-start-control"></span>';
           html = html + '<div class="control-point bezier-ui-end-curve" style="top: 50px; left: 250px;"></div>';
           html = html + '<div class="control-point bezier-ui-start-curve" style="left: 50px; top: 250px;"></div>';
@@ -211,7 +211,8 @@
     dataAttribute: 'data-bezier',
     fieldClass: 'bezier-field',
     size: 300,
-    accuracy: 3
+    accuracy: 3,
+    strokeWidth: 6
   };
 
 })(jQuery);
@@ -220,6 +221,6 @@
 $(document).bezierFields({
   selector: 'attribute',
   appendHtml: true,
-  size: 300,
+  size: 225,
   accuracy: 2
 });

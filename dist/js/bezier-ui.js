@@ -21,8 +21,8 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
       ctx.strokeStyle = "black";
       ctx.clearRect(0, 0, settings.size, settings.size);
       ctx.beginPath();
-      ctx.moveTo(0, settings.size);
-      ctx.bezierCurveTo(sx, sy, ex, ey, settings.size, 0);
+      ctx.moveTo(15, settings.size - 15);
+      ctx.bezierCurveTo(sx, sy, ex, ey, settings.size - 15, 15);
       ctx.stroke();
     }
 
